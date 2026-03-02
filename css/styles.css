@@ -5498,6 +5498,7 @@ color : white;
     backdrop-filter: blur(20px);
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .contact-card::before {
@@ -5510,6 +5511,7 @@ color : white;
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
+    pointer-events: none;
 }
 
 .contact-card:hover {
@@ -5568,6 +5570,8 @@ color : white;
     flex-direction: column;
     align-items: center;
     gap: var(--vspace-0_25);
+    position: relative;
+    z-index: 2;
 }
 
 .contact-card-label {
