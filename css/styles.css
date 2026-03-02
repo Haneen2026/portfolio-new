@@ -4402,6 +4402,15 @@ img.u-pull-left {
     width : 100%;
 }
 
+:root.light-mode .intro-social a {
+    color: white;
+}
+
+:root.light-mode .intro-social a:focus,
+:root.light-mode .intro-social a:hover {
+    color: white;
+}
+
 /* --------------------------------------------------------------------
  * ## intro scrolldown
  * -------------------------------------------------------------------- */
