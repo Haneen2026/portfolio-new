@@ -4822,10 +4822,13 @@ img.u-pull-left {
     transition    : all 0.3s ease;
     font-size     : var(--text-sm);
     white-space   : nowrap;
-    display       : inline-block;
+    display       : flex;
+    align-items   : center;
+    justify-content: center;
     min-width     : fit-content;
     overflow      : visible;
     line-height   : 1.4;
+    text-align    : center;
 }
 
 .about-info__text .btn:hover {
