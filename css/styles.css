@@ -4120,10 +4120,17 @@ img.u-pull-left {
         background-color : var(--color-body);
         border-bottom    : 1px solid var(--color-border);
         box-shadow       : var(--box-shadow);
+        padding         : 0 1.5rem;
+        margin          : 0;
+        max-width       : 400px;
+        margin-left     : auto;
+        margin-right    : auto;
+        border-radius   : 0 0 16px 16px;
+        overflow        : hidden;
     }
 
     .main-nav {
-        padding    : var(--vspace-1) 0 var(--vspace-1_5);
+        padding    : var(--vspace-1_5) 0;
         transform  : translateY(-2rem);
         opacity    : 0;
         visibility : hidden;
@@ -4132,22 +4139,29 @@ img.u-pull-left {
     .main-nav a {
         font-family    : var(--font-2);
         font-size      : var(--text-md);
-        font-weight    : 400;
-        line-height    : var(--vspace-0_875);
+        font-weight    : 500;
+        line-height    : var(--vspace-1);
         text-transform : none;
         letter-spacing : 0;
-        padding        : var(--vspace-0_5) 2.8rem;
+        padding        : var(--vspace-0_625) var(--vspace-1);
+        margin         : 0.25rem 0;
         color          : var(--color-text);
+        border-radius  : 8px;
+        transition     : all 0.2s ease;
+        display       : block;
     }
 
     .main-nav a:focus,
     .main-nav a:hover {
-        color : white;
+        color            : white;
+        background-color : rgba(255, 255, 255, 0.1);
+        transform        : translateX(4px);
     }
 
     .main-nav .current a {
-        background-color : transparent;
+        background-color : rgba(102, 126, 234, 0.2);
         color            : var(--color-1);
+        font-weight      : 600;
     }
 
     .main-nav ul {
@@ -4165,6 +4179,52 @@ img.u-pull-left {
 
     .main-nav ul li:first-child {
         display : none;
+    }
+
+    /* Social media buttons in mobile menu */
+    .main-nav .header-social {
+        display         : flex;
+        justify-content : center;
+        gap            : 1rem;
+        padding        : var(--vspace-1) 0;
+        margin-top     : var(--vspace-0_5);
+        border-top     : 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .main-nav .header-social a {
+        display         : flex;
+        align-items     : center;
+        justify-content : center;
+        width           : 44px;
+        height          : 44px;
+        padding         : 0;
+        margin          : 0;
+        border-radius   : 50%;
+        background-color : rgba(255, 255, 255, 0.05);
+        transition      : all 0.2s ease;
+    }
+
+    .main-nav .header-social a:hover {
+        background-color : rgba(255, 255, 255, 0.15);
+        transform        : scale(1.1);
+    }
+
+    .main-nav .header-social a i {
+        font-size : 1.1rem;
+        color     : var(--color-text);
+    }
+
+    .main-nav .header-social a:hover i {
+        color : white;
+    }
+
+    /* Theme toggle in mobile menu */
+    .main-nav .theme-toggle-wrapper {
+        display         : flex;
+        justify-content : center;
+        padding        : var(--vspace-0_75) 0;
+        margin-top     : var(--vspace-0_5);
+        border-top     : 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .menu-is-open .s-header {
@@ -4192,7 +4252,75 @@ img.u-pull-left {
 
 @media screen and (max-width: 600px) {
     .main-nav-wrap {
-        padding : 0;
+        padding      : 0 1rem;
+        max-width    : 350px;
+        border-radius: 0 0 12px 12px;
+    }
+
+    .main-nav {
+        padding: var(--vspace-1_25) 0;
+    }
+
+    .main-nav a {
+        font-size      : var(--text-sm);
+        padding        : var(--vspace-0_5) var(--vspace-0_875);
+        margin         : 0.2rem 0;
+        border-radius  : 6px;
+    }
+
+    .main-nav .header-social {
+        gap     : 0.875rem;
+        padding : var(--vspace-0_875) 0;
+    }
+
+    .main-nav .header-social a {
+        width  : 40px;
+        height : 40px;
+    }
+
+    .main-nav .header-social a i {
+        font-size : 1rem;
+    }
+
+    .main-nav .theme-toggle-wrapper {
+        padding: var(--vspace-0_625) 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .main-nav-wrap {
+        padding      : 0 0.75rem;
+        max-width    : 320px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .main-nav {
+        padding: var(--vspace-1) 0;
+    }
+
+    .main-nav a {
+        font-size      : var(--text-xs);
+        padding        : var(--vspace-0_375) var(--vspace-0_75);
+        margin         : 0.15rem 0;
+        border-radius  : 5px;
+    }
+
+    .main-nav .header-social {
+        gap     : 0.75rem;
+        padding : var(--vspace-0_75) 0;
+    }
+
+    .main-nav .header-social a {
+        width  : 36px;
+        height : 36px;
+    }
+
+    .main-nav .header-social a i {
+        font-size : 0.9rem;
+    }
+
+    .main-nav .theme-toggle-wrapper {
+        padding: var(--vspace-0_5) 0;
     }
 }
 
