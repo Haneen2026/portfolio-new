@@ -40,31 +40,32 @@
         opacity: [0, 1]
     }, '-=200')
     .add({
+        targets: '.intro-social li',
+        translateX: [-50, 0],
+        opacity: [0, 1],
+        delay: 0,
+        duration: 300
+    })
+    .add({
+        targets: '.intro-scrolldown',
+        translateY: [100, 0],
+        opacity: [0, 1],
+        duration: 300
+    }, '-=150')
+    .add({
         targets: '.s-intro .text-huge-title',
         translateX: [100, 0],
         opacity: [0, 1],
-        delay: anime.stagger(400)
+        delay: anime.stagger(200)
     })
     .add({
         targets: '.circles span',
         keyframes: [
             {opacity: [0, .3]},
-            {opacity: [.3, .1], delay: anime.stagger(100, {direction: 'reverse'})}
+            {opacity: [.3, .1], delay: anime.stagger(50, {direction: 'reverse'})}
         ],
-        delay: anime.stagger(100, {direction: 'reverse'})
-    })
-    .add({
-        targets: '.intro-social li',
-        translateX: [-50, 0],
-        opacity: [0, 1],
-        delay: anime.stagger(50, {direction: 'reverse'}),
-        duration: 400
-    })
-    .add({
-        targets: '.intro-scrolldown',
-        translateY: [100, 0],
-        opacity: [0, 1]
-    }, '-=800');
+        delay: anime.stagger(50, {direction: 'reverse'})
+    });
 
 
 
@@ -262,6 +263,7 @@
             const mySwiper = new Swiper('.swiper-container', {
                 slidesPerView: 1,
                 spaceBetween: 0,
+                speed: 100, // Ultra-fast transition speed (100ms)
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
@@ -277,6 +279,7 @@
                     window.testimonialSwiper = new Swiper('.swiper-container', {
                         slidesPerView: 1,
                         spaceBetween: 0,
+                        speed: 100, // Ultra-fast transition speed (100ms)
                         pagination: {
                             el: '.swiper-pagination',
                             clickable: true,
@@ -382,11 +385,12 @@
         }
     }
 
+    // Regular smoothscroll elements (600ms duration)
     const triggers = document.querySelectorAll('.smoothscroll');
         
     const moveTo = new MoveTo({
         tolerance: 0,
-        duration: 1200,
+        duration: 600, // Regular scroll duration
         easing: 'easeInOutCubic',
         container: window
     }, easeFunctions);
@@ -394,6 +398,19 @@
     triggers.forEach(function(trigger) {
         moveTo.registerTrigger(trigger);
     });
+
+    // Faster scroll for back-to-top button specifically (100ms duration)
+    const backToTopTrigger = document.querySelector('.ss-go-top a');
+    if (backToTopTrigger) {
+        const moveToFast = new MoveTo({
+            tolerance: 0,
+            duration: 100, // Ultra-fast duration for back-to-top (almost instant)
+            easing: 'easeInOutCubic',
+            container: window
+        }, easeFunctions);
+        
+        moveToFast.registerTrigger(backToTopTrigger);
+    }
 }; // end ssMoveTo
 
 

@@ -6202,6 +6202,63 @@ color : white;
         padding-bottom: var(--vspace-2);
     }
     
+    /* About section mobile overlap effect */
+    .about-info {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        padding-top: 1rem;
+        overflow: visible;
+    }
+    
+    .about-info .column:first-child {
+        flex: 1;
+        max-width: 100%;
+        order: 2;
+        position: relative;
+        z-index: 2;
+        margin-top: -4rem;
+        margin-bottom: -2rem;
+    }
+    
+    .about-info .column:last-child {
+        flex: 1;
+        max-width: 100%;
+        order: 1;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .about-info__pic-block {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        overflow: visible;
+    }
+    
+    .about-info__pic {
+        width: 100%;
+        height: 100%;
+        max-width: 200px;
+        max-height: 200px;
+        border-radius: 50%;
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+        position: relative;
+        z-index: 2;
+        border: 4px solid rgba(255, 255, 255, 0.1);
+        transform: translateY(-1rem);
+    }
+    
+    .about-info__text {
+        padding: 2rem 1.5rem;
+        margin-left: 0;
+        margin-top: 0;
+        position: relative;
+        z-index: 1;
+        max-width: 100%;
+    }
+    
     /* Display 2 contact cards per row on small screens */
     .contact-cards-container {
         display: grid;
